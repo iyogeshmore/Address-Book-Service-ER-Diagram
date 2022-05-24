@@ -158,8 +158,8 @@ mysql>   select * from address_book;
 mysql>
 
 ==========================================================================
-uc6-Ability to Retrieve Person belonging to a City or State from
-the Address BookAbility to delete a person using person's name
+#uc6-Ability to Retrieve Person belonging to a City or State from
+#the Address BookAbility to delete a person using person's name
 ==========================================================================
 
 mysql> SELECT * FROM address_book WHERE city = 'Mumbai';
@@ -182,7 +182,7 @@ mysql> SELECT * FROM address_book WHERE state = 'Maharastra';
 mysql>
 
 ==========================================================================
-uc7-Ability to understand the size of address book by City and State
+#uc7-Ability to understand the size of address book by City and State
 ==========================================================================
 
 mysql>  SELECT city, COUNT(*) FROM address_book GROUP BY city;
@@ -206,9 +206,23 @@ mysql> SELECT state, COUNT(*) FROM address_book GROUP BY state;
 
 mysql>
 
+==========================================================================
+#uc8-Ability to retrieve entries sorted alphabetically
+#by Person’s name for a given city
+==========================================================================
 
 
+mysql>  SELECT firstName,city FROM address_book ORDER BY firstName;
++-----------+---------+
+| firstName | city    |
++-----------+---------+
+| Nilesh    | Lal Kot |
+| Rajat     | Satara  |
+| Yogesh    | Mumbai  |
++-----------+---------+
+3 rows in set (0.00 sec)
 
+mysql>
 
 
 
