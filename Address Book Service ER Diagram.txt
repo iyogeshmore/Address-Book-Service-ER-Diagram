@@ -87,3 +87,42 @@ mysql> desc address_book;
 8 rows in set (0.01 sec)
 
 mysql>
+
+==========================================================================
+#uc3-Ability to insert new Contacts to Address Book
+==========================================================================
+
+mysql> insert  into address_book(firstName,lastname,address,city,state,zip,phoneNo,email) 
+values ('Yogesh','More','Panvel','Mumbai','Maharastra','410206','8850055197','iyogesh1@gmail.com'), 
+('Akshar','Hate',' Khanda colony','Navi Mumbai','Maharastra','410206','8865153580','iakshar2@gmail.com'), 
+('Rajat','Nikam','Satara','Satara','Maharastra','415001','8097543520','rajat3@gmail.com'), 
+('Nilesh','Shinde',' Qila Rai Pithora ','Lal Kot','Delhi','110068','723929393','nilesh4@gmail.com');
+Query OK, 4 rows affected (0.01 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> select * from address_book;
++-----------+----------+--------------------+-------------+------------+--------+------------+--------------------+
+| firstName | lastName | address            | city        | state      | zip    | phoneNo    | email              |
++-----------+----------+--------------------+-------------+------------+--------+------------+--------------------+
+| Akshar    | Hate     |  Khanda colony     | Navi Mumbai | Maharastra | 410206 | 8865153580 | iakshar2@gmail.com |
+| Nilesh    | Shinde   |  Qila Rai Pithora  | Lal Kot     | Delhi      | 110068 | 723929393  | nilesh4@gmail.com  |
+| Rajat     | Nikam    | Satara             | Satara      | Maharastra | 415001 | 8097543520 | rajat3@gmail.com   |
+| Yogesh    | More     | Panvel             | Mumbai      | Maharastra | 410206 | 8850055197 | iyogesh1@gmail.com |
++-----------+----------+--------------------+-------------+------------+--------+------------+--------------------+
+4 rows in set (0.01 sec)
+
+mysql>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
