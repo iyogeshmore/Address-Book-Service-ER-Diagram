@@ -18,9 +18,9 @@ owners.
 Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
 
-===========================================================
+==========================================================================
 #uc1-Ability to create a Address Book Service DB
-===========================================================
+==========================================================================
 
 mysql> show databases;
 +--------------------+
@@ -53,4 +53,37 @@ mysql> SELECT DATABASE();
 +----------------------+
 1 row in set (0.00 sec)
 
-mysql> 
+mysql>
+
+==========================================================================
+#uc2-Ability to create a Address Book Table with first and last names,
+#address, city, state, zip, phone number and email as its attributes
+==========================================================================
+
+mysql> CREATE TABLE address_book( firstName VARCHAR(25) NOT NULL,    
+lastName VARCHAR(25) NOT NULL,    
+address VARCHAR(45) NOT NULL,    
+city VARCHAR(15) NOT NULL,    
+state VARCHAR(15) NOT NULL,    
+zip VARCHAR(6) NOT NULL,    
+phoneNo VARCHAR(13) NOT NULL,    
+email VARCHAR(20) NOT NULL,    
+PRIMARY KEY (firstName));
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> desc address_book;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| firstName | varchar(25) | NO   | PRI | NULL    |       |
+| lastName  | varchar(25) | NO   |     | NULL    |       |
+| address   | varchar(45) | NO   |     | NULL    |       |
+| city      | varchar(15) | NO   |     | NULL    |       |
+| state     | varchar(15) | NO   |     | NULL    |       |
+| zip       | varchar(6)  | NO   |     | NULL    |       |
+| phoneNo   | varchar(13) | NO   |     | NULL    |       |
+| email     | varchar(20) | NO   |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+8 rows in set (0.01 sec)
+
+mysql>
