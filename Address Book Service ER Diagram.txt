@@ -157,6 +157,30 @@ mysql>   select * from address_book;
 
 mysql>
 
+==========================================================================
+uc6-Ability to Retrieve Person belonging to a City or State from
+the Address BookAbility to delete a person using person's name
+==========================================================================
+
+mysql> SELECT * FROM address_book WHERE city = 'Mumbai';
++-----------+----------+---------+--------+------------+--------+------------+--------------------+
+| firstName | lastName | address | city   | state      | zip    | phoneNo    | email              |
++-----------+----------+---------+--------+------------+--------+------------+--------------------+
+| Yogesh    | More     | Panvel  | Mumbai | Maharastra | 410206 | 8850055197 | iyogesh1@gmail.com |
++-----------+----------+---------+--------+------------+--------+------------+--------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT * FROM address_book WHERE state = 'Maharastra';
++-----------+----------+---------+--------+------------+--------+------------+--------------------+
+| firstName | lastName | address | city   | state      | zip    | phoneNo    | email              |
++-----------+----------+---------+--------+------------+--------+------------+--------------------+
+| Rajat     | Nikam    | Satara  | Satara | Maharastra | 415001 | 9055005197 | rajat3@gmail.com   |
+| Yogesh    | More     | Panvel  | Mumbai | Maharastra | 410206 | 8850055197 | iyogesh1@gmail.com |
++-----------+----------+---------+--------+------------+--------+------------+--------------------+
+2 rows in set (0.00 sec)
+
+mysql>
+
 
 
 
