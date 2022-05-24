@@ -185,7 +185,7 @@ mysql>
 #uc7-Ability to understand the size of address book by City and State
 ==========================================================================
 
-mysql>  SELECT city, COUNT(*) FROM address_book GROUP BY city;
+mysql> SELECT city, COUNT(*) FROM address_book GROUP BY city;
 +---------+----------+
 | city    | COUNT(*) |
 +---------+----------+
@@ -212,7 +212,7 @@ mysql>
 ==========================================================================
 
 
-mysql>  SELECT firstName,city FROM address_book ORDER BY firstName;
+mysql> SELECT firstName,city FROM address_book ORDER BY firstName;
 +-----------+---------+
 | firstName | city    |
 +-----------+---------+
@@ -224,5 +224,33 @@ mysql>  SELECT firstName,city FROM address_book ORDER BY firstName;
 
 mysql>
 
+==========================================================================
+#uc9-Ability to identify each Address Book with name and Type
+==========================================================================
 
+mysql> alter table address_book add type varchar(30) after lastName;
+Query OK, 0 rows affected (0.1345 sec)
 
+mysql> update  address_book set type='family' where firstName ='Yogesh';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update  address_book set type='friend' where firstName ='Rajat';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update  address_book set type='profession ' where firstName ='Nilesh';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from address_book;
++-----------+----------+-------------+--------------------+---------+------------+--------+------------+--------------------+
+| firstName | lastName | type        | address            | city    | state      | zip    | phoneNo    | email              |
++-----------+----------+-------------+--------------------+---------+------------+--------+------------+--------------------+
+| Nilesh    | Patil    | profession  |  Qila Rai Pithora  | Lal Kot | Delhi      | 110068 | 723929393  | nilesh4@gmail.com  |
+| Rajat     | Nikam    | friend      | Satara             | Satara  | Maharastra | 415001 | 9055005197 | rajat3@gmail.com   |
+| Yogesh    | More     | family      | Panvel             | Mumbai  | Maharastra | 410206 | 8850055197 | iyogesh1@gmail.com |
++-----------+----------+-------------+--------------------+---------+------------+--------+------------+--------------------+
+3 rows in set (0.00 sec)
+
+mysql>
